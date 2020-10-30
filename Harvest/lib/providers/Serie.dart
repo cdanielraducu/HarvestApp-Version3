@@ -8,7 +8,9 @@ class Serie with ChangeNotifier {
   final String pasaj;
   final String rezumat;
   final String imageUrl;
+  final String imageUrlForMp;
   final List<Mesaj> mesaje;
+  final String videoLink;
 
   Serie({
     @required this.index,
@@ -17,6 +19,8 @@ class Serie with ChangeNotifier {
     @required this.pasaj,
     @required this.rezumat,
     @required this.imageUrl,
+    @required this.imageUrlForMp,
     @required this.mesaje,
+    @required this.videoLink,
   });
 }

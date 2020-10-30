@@ -1,4 +1,5 @@
 import 'package:Harvest/providers/Serii.dart';
+import 'package:Harvest/screens/MpScreen.dart';
 import 'package:Harvest/screens/SeriiScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -22,13 +23,15 @@ class MyApp extends StatelessWidget {
         )
       ],
       child: MaterialApp(
-        title: 'Harvest',
-        theme: ThemeData(
-          primaryColor: Colors.black,
-          fontFamily: 'PTSans',
-        ),
-        home: SeriiScreen(),
-      ),
+          title: 'Harvest',
+          theme: ThemeData(
+            primaryColor: Colors.black,
+            fontFamily: 'PTSans',
+          ),
+          home: SeriiScreen(),
+          routes: {
+            MpScreen.routeName: (ctx) => MpScreen(),
+          }),
     );
   }
 }

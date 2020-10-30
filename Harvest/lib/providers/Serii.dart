@@ -81,7 +81,9 @@ class Serii with ChangeNotifier {
           pasaj: serieData['pasaj'],
           rezumat: serieData['rezumat'],
           imageUrl: serieData['imageUrl'],
+          imageUrlForMp: serieData['imageUrlForMp'],
           mesaje: mesaje,
+          videoLink: serieData['videoLink'],
         ));
 
         _serii = loadedProducts;

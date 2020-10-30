@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:Harvest/providers/Serie.dart';
 import 'package:Harvest/providers/Serii.dart';
-import 'package:cached_network_image/cached_network_image.dart';
+import 'package:Harvest/screens/MesajeScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:parallax_image/parallax_image.dart';
@@ -130,15 +130,15 @@ class _SeriiScreenState extends State<SeriiScreen> {
   Widget _buildVerticalChild(
       BuildContext context, int i, Serii seriiData, int length) {
     if (i > length - 1) return null;
-    // Serie seriePrimita = seriiData.serii[i];
+    Serie seriePrimita = seriiData.serii[i];
     i++;
 
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 2.0, horizontal: 1.0),
       child: GestureDetector(
         onTap: () {
-          // Navigator.of(context).push<void>(
-          //     SwipeablePageRoute(builder: (_) => MesajeScreen(serie)));
+          Navigator.of(context).push<void>(SwipeablePageRoute(
+              builder: (_) => MesajeScreen(seriePrimita, fileStream[i - 1])));
         },
         child: Card(
           elevation: 10.0,
