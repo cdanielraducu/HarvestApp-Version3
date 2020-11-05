@@ -1,8 +1,10 @@
 import 'dart:io';
 
+import 'package:Harvest/MpArguments.dart';
 import 'package:Harvest/providers/Serie.dart';
 import 'package:Harvest/providers/Serii.dart';
 import 'package:Harvest/screens/MesajeScreen.dart';
+import 'package:Harvest/screens/MpScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:parallax_image/parallax_image.dart';
@@ -73,6 +75,51 @@ class _SeriiScreenState extends State<SeriiScreen> {
             fontSize: 22,
           ),
         ),
+        actions: <Widget>[
+          Row(
+            children: [
+              Container(
+                child: InkWell(
+                  // onTap: () {
+                  //   // print(_seriiDataFromFirebase.serii.first.mesaje.last.titlu);
+                  //   Navigator.of(context).pushNamed(MpScreen.routeName,
+                  //       arguments: MpArguments(
+                  //         _seriiDataFromFirebase.serii.first.mesaje.last,
+                  //         _seriiDataFromFirebase.serii.first.titlu,
+                  //         _seriiDataFromFirebase.serii.first.imageUrlForMp,
+                  //       ));
+                  // },
+                  child: Text(
+                    'Ultima predica',
+                    style: TextStyle(
+                      fontFamily: 'PTSans',
+                      fontSize: 20,
+                    ),
+                  ),
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.only(right: 10),
+                child: InkWell(
+                  onTap: () {
+                    // print(_seriiDataFromFirebase.serii.first.mesaje.last.titlu);
+                    Navigator.of(context).pushNamed(MpScreen.routeName,
+                        arguments: MpArguments(
+                          _seriiDataFromFirebase.serii.first.mesaje.last,
+                          _seriiDataFromFirebase.serii.first.titlu,
+                          _seriiDataFromFirebase.serii.first.imageUrlForMp,
+                        ));
+                  },
+                  child: Icon(
+                    Icons.navigate_next,
+                    color: Colors.white,
+                    size: 30,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
       body: _loading
           ? Stack(

@@ -144,6 +144,10 @@ class _MesajeScreenState extends State<MesajeScreen> {
     return Scaffold(
       body: Column(
         children: [
+          Container(
+            height: 25,
+            decoration: BoxDecoration(color: Colors.black),
+          ),
           Stack(
             children: [
               Container(

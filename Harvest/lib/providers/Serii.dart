@@ -19,6 +19,7 @@ class Serii with ChangeNotifier {
   }
 
   Future<void> fetchAndSetSerii() async {
+    print("a");
     // incarca seriile din baza de date de pe firebase
     const url = 'https://harvestmesaje2.firebaseio.com/Serii.json';
     // print(f.originalUrl);
